@@ -18,7 +18,7 @@ namespace AoEAiTools.LanguageParsing
         public AiParser() { }
 
         /// <summary>
-        /// Returns the tokens before the given position, including all that are in the same line as the starting point.
+        /// Returns the tokens before or after the given position, including all that are in the same line as the starting point.
         /// This method does not do any context checking, it just scans for known keywords.
         /// </summary>
         /// <param name="startingPoint">The position where the parsing shall start.</param>
@@ -59,7 +59,7 @@ namespace AoEAiTools.LanguageParsing
                         {
                             // The line ends with an unclosed string, copy remainder of the line
                             string remainingLineString = currentLineString.Substring(currentLineIndex);
-                            lineTokens.Add(new AiToken(AiTokenTypes.String, remainingLineString, startingPoint + currentLineIndex, remainingLineString.Length));
+                            lineTokens.Add(new AiToken(AiTokenTypes.String, remainingLineString, currentLine.Start + currentLineIndex, remainingLineString.Length));
                             break;
                         }
                     }
@@ -67,7 +67,7 @@ namespace AoEAiTools.LanguageParsing
                     {
                         // Copy remainder of the line
                         string remainingLineString = currentLineString.Substring(currentLineIndex);
-                        lineTokens.Add(new AiToken(AiTokenTypes.Comment, remainingLineString, startingPoint + currentLineIndex, remainingLineString.Length));
+                        lineTokens.Add(new AiToken(AiTokenTypes.Comment, remainingLineString, currentLine.Start + currentLineIndex, remainingLineString.Length));
                         break;
                     }
                     else if(currentLineChar == '=')

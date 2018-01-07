@@ -47,6 +47,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EditorExtensions\Formatting\AiFormatHandlerProvider.cs" />
+    <Compile Include="EditorExtensions\Formatting\AiFormatCommandHandler.cs" />
+    <Compile Include="EditorExtensions\SmartIndentation\AiSmartIndent.cs" />
+    <Compile Include="EditorExtensions\SmartIndentation\AiSmartIndentProvider.cs" />
     <Compile Include="LanguageParsing\AiToken.cs" />
     <Compile Include="LanguageParsing\Constants.cs" />
     <Compile Include="EditorExtensions\AiContentTypeDefinition.cs" />
