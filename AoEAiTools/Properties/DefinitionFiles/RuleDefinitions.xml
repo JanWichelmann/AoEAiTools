@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<definitions>
+	<facts>
+		<fact name="true" />
+		<fact name="false" />
+		<fact name="attack-soldier-count">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="attack-warboat-count">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="building-available">
+			<parameter type="building" />
+		</fact>
+		<fact name="building-count">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="building-count-total">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="building-type-count">
+			<parameter type="building" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="building-type-count-total">
+			<parameter type="building" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="can-afford-building">
+			<parameter type="building" />
+		</fact>
+		<fact name="can-afford-complete-wall">
+			<parameter type="wall-perimeter" />
+			<parameter type="wall" />
+		</fact>
+		<fact name="can-afford-research">
+			<parameter type="research" />
+		</fact>
+		<fact name="can-afford-unit">
+			<parameter type="unit" />
+		</fact>
+		<fact name="can-build">
+			<parameter type="building" />
+		</fact>
+		<fact name="can-build-gate">
+			<parameter type="wall-perimeter" />
+		</fact>
+		<fact name="can-build-gate-with-escrow">
+			<parameter type="wall-perimeter" />
+		</fact>
+		<fact name="can-build-wall">
+			<parameter type="wall-perimeter" />
+			<parameter type="wall" />
+		</fact>
+		<fact name="can-build-wall-with-escrow">
+			<parameter type="wall-perimeter" />
+			<parameter type="wall" />
+		</fact>
+		<fact name="can-build-with-escrow">
+			<parameter type="building" />
+		</fact>
+		<fact name="can-buy-commodity">
+			<parameter type="commodity" />
+		</fact>
+		<fact name="can-research">
+			<parameter type="research" />
+		</fact>
+		<fact name="can-research-with-escrow">
+			<parameter type="research" />
+		</fact>
+		<fact name="can-sell-commodity">
+			<parameter type="commodity" />
+		</fact>
+		<fact name="can-spy" />
+		<fact name="can-spy-with-escrow" />
+		<fact name="can-train">
+			<parameter type="unit" />
+		</fact>
+		<fact name="can-train-with-escrow">
+			<parameter type="unit" />
+		</fact>
+		<fact name="cc-players-building-count">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="cc-players-building-type-count">
+			<parameter type="player" />
+			<parameter type="building" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="cc-players-unit-count">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="cc-players-unit-type-count">
+			<parameter type="player" />
+			<parameter type="unit" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="cheats-enabled" />
+		<fact name="civ-selected">
+			<parameter type="civ" />
+		</fact>
+		<fact name="civilian-population">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="commodity-buying-price">
+			<parameter type="commodity" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="commodity-selling-price">
+			<parameter type="commodity" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="current-age">
+			<parameter type="rel-op" />
+			<parameter type="age" />
+		</fact>
+		<fact name="current-age-time">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="current-score">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="death-match-game" />
+		<fact name="defend-soldier-count">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="defend-warboat-count">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="difficulty">
+			<parameter type="rel-op" />
+			<parameter type="difficulty" />
+		</fact>
+		<fact name="doctrine">
+			<parameter type="number" />
+		</fact>
+		<fact name="dropsite-min-distance">
+			<parameter type="resource" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="enemy-buildings-in-town" />
+		<fact name="enemy-captured-relics" />
+		<fact name="escrow-amount">
+			<parameter type="resource" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="event-detected">
+			<parameter type="event-type" />
+			<parameter type="event-id" />
+		</fact>
+		<fact name="food-amount">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="game-time">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="goal">
+			<parameter type="goal-id" />
+			<parameter type="number" />
+		</fact>
+		<fact name="gold-amount">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="housing-headroom">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="idle-farm-count">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="map-size">
+			<parameter type="map-size" />
+		</fact>
+		<fact name="map-type">
+			<parameter type="map-type" />
+		</fact>
+		<fact name="military-population">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="player-computer">
+			<parameter type="player" />
+		</fact>
+		<fact name="player-human">
+			<parameter type="player" />
+		</fact>
+		<fact name="player-in-game">
+			<parameter type="player" />
+		</fact>
+		<fact name="player-number">
+			<parameter type="player" />
+		</fact>
+		<fact name="player-resigned">
+			<parameter type="player" />
+		</fact>
+		<fact name="player-valid">
+			<parameter type="player" />
+		</fact>
+		<fact name="players-building-count">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-building-type-count">
+			<parameter type="player" />
+			<parameter type="building" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-civ">
+			<parameter type="player" />
+			<parameter type="civ" />
+		</fact>
+		<fact name="players-civilian-population">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-current-age">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="age" />
+		</fact>
+		<fact name="players-current-age-time">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-military-population">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-population">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-score">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-stance">
+			<parameter type="player" />
+			<parameter type="stance" />
+		</fact>
+		<fact name="players-tribute">
+			<parameter type="player" />
+			<parameter type="resource" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-tribute-memory">
+			<parameter type="player" />
+			<parameter type="resource" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-unit-count">
+			<parameter type="player" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="players-unit-type-count">
+			<parameter type="player" />
+			<parameter type="unit" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="population">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="population-cap">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="population-headroom">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="random-number">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="regicide-game" />
+		<fact name="research-available">
+			<parameter type="research" />
+		</fact>
+		<fact name="research-completed">
+			<parameter type="research" />
+		</fact>
+		<fact name="resource-found">
+			<parameter type="resource" />
+		</fact>
+		<fact name="shared-goal">
+			<parameter type="shared-goal-id" />
+			<parameter type="number" />
+		</fact>
+		<fact name="sheep-and-forage-too-far" />
+		<fact name="soldier-count">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="stance-toward">
+			<parameter type="player" />
+			<parameter type="stance" />
+		</fact>
+		<fact name="starting-age">
+			<parameter type="rel-op" />
+			<parameter type="age" />
+		</fact>
+		<fact name="starting-resources">
+			<parameter type="rel-op" />
+			<parameter type="starting-resources" />
+		</fact>
+		<fact name="stone-amount">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="strategic-number">
+			<parameter type="strategic-number" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="taunt-detected">
+			<parameter type="player" />
+			<parameter type="taunt-id" />
+		</fact>
+		<fact name="timer-triggered">
+			<parameter type="timer-id" />
+		</fact>
+		<fact name="town-under-attack" />
+		<fact name="unit-available">
+			<parameter type="unit" />
+		</fact>
+		<fact name="unit-count">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="unit-count-total">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="unit-type-count">
+			<parameter type="unit" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="unit-type-count-total">
+			<parameter type="unit" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="victory-condidition">
+			<parameter type="victory-condidition" />
+		</fact>
+		<fact name="wall-completed-percentage">
+			<parameter type="wall-perimeter" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="wall-invisible-percentage">
+			<parameter type="wall-perimeter" />
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="warboat-count">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="wood-amount">
+			<parameter type="rel-op" />
+			<parameter type="number" />
+		</fact>
+		<fact name="hold-koh-ruin" />
+		<fact name="hold-relics" />
+	</facts>
+	<actions>
+		<action name="do-nothing" />
+		<action name="acknowledge-event">
+			<parameter type="event-type" />
+			<parameter type="event-id" />
+		</action>
+		<action name="acknowledge-taunt">
+			<parameter type="player" />
+			<parameter type="taunt-id" />
+		</action>
+		<action name="attack-now" />
+		<action name="build">
+			<parameter type="building" />
+		</action>
+		<action name="build-forward">
+			<parameter type="building" />
+		</action>
+		<action name="build-gate">
+			<parameter type="wall-perimeter" />
+		</action>
+		<action name="build-wall">
+			<parameter type="wall-perimeter" />
+			<parameter type="wall" />
+		</action>
+		<action name="buy-commodity">
+			<parameter type="commodity" />
+		</action>
+		<action name="cc-add-resource">
+			<parameter type="resource" />
+			<parameter type="number" />
+		</action>
+		<action name="chat-local">
+			<parameter type="string" />
+		</action>
+		<action name="chat-local-using-id">
+			<parameter type="string-id" />
+		</action>
+		<action name="chat-local-using-range">
+			<parameter type="string-id-start" />
+			<parameter type="string-id-range" />
+		</action>
+		<action name="chat-local-to-self">
+			<parameter type="string" />
+		</action>
+		<action name="chat-to-all">
+			<parameter type="string" />
+		</action>
+		<action name="chat-to-all-using-id">
+			<parameter type="string-id" />
+		</action>
+		<action name="chat-to-all-using-range">
+			<parameter type="string-id-start" />
+			<parameter type="string-id-range" />
+		</action>
+		<action name="chat-to-allies">
+			<parameter type="string" />
+		</action>
+		<action name="chat-to-allies-using-id">
+			<parameter type="string-id" />
+		</action>
+		<action name="chat-to-allies-using-range">
+			<parameter type="string-id-start" />
+			<parameter type="string-id-range" />
+		</action>
+		<action name="chat-to-enemies">
+			<parameter type="string" />
+		</action>
+		<action name="chat-to-enemies-using-id">
+			<parameter type="string-id" />
+		</action>
+		<action name="chat-to-enemies-using-range">
+			<parameter type="string-id-start" />
+			<parameter type="string-id-range" />
+		</action>
+		<action name="chat-to-player">
+			<parameter type="player" />
+			<parameter type="string" />
+		</action>
+		<action name="chat-to-player-using-id">
+			<parameter type="player" />
+			<parameter type="string-id" />
+		</action>
+		<action name="chat-to-player-using-range">
+			<parameter type="string-id-start" />
+			<parameter type="string-id-range" />
+		</action>
+		<action name="chat-trace">
+			<parameter type="number" />
+		</action>
+		<action name="clear-tribute-memory">
+			<parameter type="player" />
+			<parameter type="resource" />
+		</action>
+		<action name="delete-building">
+			<parameter type="building" />
+		</action>
+		<action name="delete-unit">
+			<parameter type="unit" />
+		</action>
+		<action name="disable-self" />
+		<action name="disable-timer">
+			<parameter type="timer-id" />
+		</action>
+		<action name="enable-timer">
+			<parameter type="timer-id" />
+			<parameter type="number" />
+		</action>
+		<action name="enable-wall-placement">
+			<parameter type="wall-perimeter" />
+		</action>
+		<action name="generate-random-number">
+			<parameter type="number" />
+		</action>
+		<action name="log">
+			<parameter type="string" />
+		</action>
+		<action name="log-trace">
+			<parameter type="string" />
+		</action>
+		<action name="release-escrow">
+			<parameter type="resource" />
+		</action>
+		<action name="research">
+			<parameter type="research" />
+		</action>
+		<action name="resign" />
+		<action name="sell-commodity">
+			<parameter type="commodity" />
+		</action>
+		<action name="set-difficulty-parameter">
+			<parameter type="difficulty-parameter" />
+		</action>
+		<action name="set-doctrine">
+			<parameter type="number" />
+		</action>
+		<action name="set-escrow-percentage">
+			<parameter type="resource" />
+			<parameter type="number" />
+		</action>
+		<action name="set-goal">
+			<parameter type="goal-id" />
+			<parameter type="number" />
+		</action>
+		<action name="set-shared-goal">
+			<parameter type="shared-goal-id" />
+			<parameter type="number" />
+		</action>
+		<action name="set-signal">
+			<parameter type="signal-id" />
+		</action>
+		<action name="set-stance">
+			<parameter type="player" />
+			<parameter type="stance" />
+		</action>
+		<action name="set-strategic-number">
+			<parameter type="strategic-number" />
+			<parameter type="number" />
+		</action>
+		<action name="spy" />
+		<action name="taunt">
+			<parameter type="taunt-id" />
+		</action>
+		<action name="taunt-using-range">
+			<parameter type="taunt-id-start" />
+			<parameter type="taunt-id-range" />
+		</action>
+		<action name="train">
+			<parameter type="unit" />
+		</action>
+		<action name="tribute-to-player">
+			<parameter type="player" />
+			<parameter type="resource" />
+			<parameter type="number" />
+		</action>
+		<action name="set-author-version">
+			<parameter type="string" />
+		</action>
+	</actions>
+	<parameters>
+		<parameter type="age">
+			dark-age,feudal-age,castle-age,imperial-age,post-imperial-age
+		</parameter>
+		<parameter type="rel-op">
+			less-than,less-or-equal,greater-than,greater-or-equal,equal,not-equal
+		</parameter>
+		<parameter type="building">
+			archery-range,barracks,blacksmith,bombard-tower,castle,dock,farm,fish-trap,guard-tower,house,keep,lumber-camp,market,mill,mining-camp,monastery,outpost,siege-workshop,stable,town-center,university,watch-tower,wonder,watch-tower-line
+		</parameter>
+		<parameter type="civ">
+			briton,byzantine,celtic,chinese,frankish,gothic,japanese,mongol,persian,saracen,teutonic,turkish,viking
+		</parameter>
+		<parameter type="difficulty">
+			easiest,easy,moderate,hard,hardest
+		</parameter>
+		<parameter type="difficulty-parameter">
+			ability-to-dodge-missiles,ability-to-maintain-distance
+		</parameter>
+		<parameter type="stance">
+			ally,neutral,enemy
+		</parameter>
+		<parameter type="map-size">
+			tiny,small,medium,normal,large,giant
+		</parameter>
+		<parameter type="map-type">
+			arabia,archipelago,baltic,black-forest,coastal,continental,crater-lake,fortress,gold-rush,highland,islands,mediterranean,migration,rivers,team-islands,scenario-map
+		</parameter>
+		<parameter type="player">
+			any-ally,any-computer,any-computer-ally,any-computer-enemy,any-computer-neutral,any-enemy,any-human,any-human-ally,any-human-enemy,any-human-neutral,any-neutral,every-ally,every-computer,every-enemy,every-human,every-neutral
+		</parameter>
+		<parameter type="research">
+			ri-arbalest,ri-crossbow,ri-elite-skirmisher,ri-hand-cannon,ri-heavy-cavalry-archer,ri-champion,ri-elite-eagle-warrior,ri-halberdier,ri-long-swordsman,ri-man-at-arms,ri-parthian-tactics,ri-pikeman,ri-squires,ri-thumb-ring,ri-tracking,ri-two-handed-swordsman,ri-blast-furnace,ri-bodkin-arrow,ri-bracer,ri-chain-barding,ri-chain-mail,ri-fletching,ri-forging,ri-iron-casting,ri-leather-archer-armor,ri-padded-archer-armor,ri-plate-barding,ri-plate-mail,ri-ring-archer-armor,ri-scale-barding,ri-scale-mail,ri-conscription,ri-hoardings,ri-sappers,ri-elite-berserk,ri-elite-cataphract,ri-elite-chu-ko-nu,ri-elite-huskarl,ri-elite-janissary,ri-elite-longbowman,ri-elite-mameluke,ri-elite-mangudai,ri-elite-samurai,ri-elite-teutonic-knight,ri-elite-throwing-axeman,ri-elite-war-elephant,ri-elite-woad-raider,ri-my-unique-elite-unit,ri-my-unique-research,ri-cannon-galleon,ri-careening,ri-deck-guns,ri-dry-dock,ri-elite-longboat,ri-fast-fire-ship,ri-galleon,ri-heavy-demolition-ship,ri-shipwright,ri-war-galley,ri-bow-saw,ri-double-bit-axe,ri-two-man-saw,ri-banking,ri-caravan,ri-cartography,ri-coinage,ri-guilds,ri-crop-rotation,ri-heavy-plow,ri-horse-collar,ri-gold-mining,ri-gold-shaft-mining,ri-stone-mining,ri-stone-shaft-mining,ri-atonement,ri-block-printing,ri-faith,ri-fervor,ri-herbal-medicine,ri-heresy,ri-illumination,ri-redemption,ri-sanctity,ri-theocracy,ri-bombard-cannon,ri-capped-ram,ri-heavy-scorpion,ri-onager,ri-scorpion,ri-siege-onager,ri-siege-ram,ri-bloodlines,ri-cavalier,ri-heavy-camel,ri-husbandry,ri-hussar,ri-light-cavalry,ri-paladin,ri-hand-cart,ri-loom,ri-town-patrol,ri-town-watch,ri-wheel-barrow,ri-architecture,ri-ballistics,ri-bombard-tower,ri-chemistry,ri-fortified-wall,ri-guard-tower,ri-heated-shot,ri-keep,ri-masonry,ri-murder-holes,ri-siege-engineers,ri-stonecutting,my-unique-unit-upgrade,my-unique-research
+		</parameter>
+		<parameter type="resource">
+			food,gold,stone,wood
+		</parameter>
+		<parameter type="starting-resources">
+			low-resources,medium-resources,high-resources
+		</parameter>
+		<parameter type="strategic-number">
+			sn-percent-civilian-explorers,sn-percent-civilian-builders,sn-percent-civilian-gatherers,sn-cap-civilian-explorers,sn-cap-civilian-builders,sn-cap-civilian-gatherers,sn-minimum-attack-group-size,sn-total-number-explorers,sn-percent-enemy-sighted-response,sn-enemy-sighted-response-distance,sn-sentry-distance,sn-relic-return-distance,sn-minimum-defend-group-size,sn-maximum-attack-group-size,sn-maximum-defend-group-size,sn-minimum-peace-like-level,sn-percent-exploration-required,sn-zero-priority-distance,sn-minimum-civilian-explorers,sn-number-attack-groups,sn-number-defend-groups,sn-attack-group-gather-spacing,sn-number-explore-groups,sn-minimum-explore-group-size,sn-maximum-explore-group-size,sn-gold-defend-priority,sn-stone-defend-priority,sn-forage-defend-priority,sn-relic-defend-priority,sn-town-defend-priority,sn-defense-distance,sn-number-boat-attack-groups,sn-minimum-boat-attack-group-size,sn-maximum-boat-attack-group-size,sn-number-boat-explore-groups,sn-minimum-boat-explore-group-size,sn-maximum-boat-explore-group-size,sn-number-boat-defend-groups,sn-minimum-boat-defend-group-size,sn-maximum-boat-defend-group-size,sn-dock-defend-priority,sn-sentry-distance-variation,sn-minimum-town-size,sn-maximum-town-size,sn-group-commander-selection-method,sn-consecutive-idle-unit-limit,sn-target-evaluation-distance,sn-target-evaluation-hitpoints,sn-target-evaluation-damage-capability,sn-target-evaluation-kills,sn-target-evaluation-ally-proximity,sn-target-evaluation-rof,sn-target-evaluation-randomness,sn-camp-max-distance,sn-mill-max-distance,sn-target-evaluation-attack-attempts,sn-target-evaluation-range,sn-defend-overlap-distance,sn-scale-minimum-attack-group-size,sn-scale-maximum-attack-group-size,sn-attack-group-size-randomness,sn-scaling-frequency,sn-maximum-gaia-attack-response,sn-build-frequency,sn-attack-separation-time-randomness,sn-attack-intelligence,sn-initial-attack-delay,sn-save-scenario-information,sn-special-attack-type1,sn-special-attack-influence1,sn-minimum-water-body-size-for-dock,sn-number-build-attempts-before-skip,sn-max-skips-per-attempt,sn-food-gatherer-percentage,sn-gold-gatherer-percentage,sn-stone-gatherer-percentage,sn-wood-gatherer-percentage,sn-target-evaluation-continent,sn-target-evaluation-siege-weapon,sn-group-leader-defense-distance,sn-initial-attack-delay-type,sn-blot-exploration-map,sn-blot-size,sn-intelligent-gathering,sn-task-ungrouped-soldiers,sn-target-evaluation-boat,sn-number-enemy-objects-required,sn-number-max-skip-cycles,sn-retask-gather-amount,sn-max-retask-gather-amount,sn-max-build-plan-gatherer-percentage,sn-food-dropsite-distance,sn-wood-dropsite-distance,sn-stone-dropsite-distance,sn-gold-dropsite-distance,sn-initial-exploration-required,sn-random-placement-factor,sn-required-forest-tiles,sn-attack-diplomacy-impact,sn-percent-half-exploration,sn-target-evaluation-time-kill-ratio,sn-target-evaluation-in-progress,sn-attack-winning-player,sn-coop-share-information,sn-attack-winning-player-factor,sn-coop-share-attacking,sn-coop-share-attacking-interval,sn-percentage-explore-exterminators,sn-track-player-history,sn-minimum-dropsite-buffer,sn-use-by-type-max-gathering,sn-minimum-boar-hunt-group-size,sn-minimum-amount-for-trading,sn-easiest-reaction-percentage,sn-easier-reaction-percentage,sn-hits-before-alliance-change,sn-allow-civilian-defense,sn-number-forward-builders,sn-percent-attack-soldiers,sn-percent-attack-boats,sn-do-not-scale-for-difficulty-level,sn-group-form-distance,sn-ignore-attack-group-under-attack,sn-gather-defense-units,sn-maximum-wood-drop-distance,sn-maximum-food-drop-distance,sn-maximum-hunt-drop-distance,sn-maximum-fish-boat-drop-distance,sn-maximum-gold-drop-distance,sn-maximum-stone-drop-distance,sn-gather-idle-soldiers-at-center,sn-garrison-rams
+		</parameter>
+		<parameter type="unit">
+			arbalest,archer,cavalry-archer,crossbowman,elite-skirmisher,hand-cannoneer,heavy-cavalry-archer,skirmisher,champion,eagle-warrior,elite-eagle-warrior,halberdier,long-swordsman,man-at-arms,militiaman,pikeman,spearman,two-handed-swordsman,berserk,cataphract,chu-ko-nu,conquistador,elite-berserk,elite-cataphract,elite-chu-ko-nu,elite-conquistador,elite-huskarl,elite-jaguar-warrior,elite-janissary,elite-longbowman,elite-mameluke,elite-mangudai,elite-plumed-archer,elite-samurai,elite-tarkan,elite-teutonic-knight,elite-throwing-axeman,elite-war-elephant,elite-war-wagon,elite-woad-raider,huskarl,jaguar-warrior,janissary,longbowman,mameluke,mangudai,petard,plumed-archer,samurai,tarkan,teutonic-knight,throwing-axeman,trebuchet,war-elephant,war-wagon,woad-raider,cannon-galleon,demolition-ship,elite-cannon-galleon,elite-longboat,elite-turtle-ship,fast-fire-ship,fire-ship,fishing-ship,galleon,galley,heavy-demolition-ship,longboat,trade-cog,transport-ship,turtle-ship,war-galley,trade-cart,missionary,monk,battering-ram,bombard-cannon,capped-ram,heavy-scorpion,mangonel,onager,scorpion,siege-onager,siege-ram,camel,cavalier,heavy-camel,hussar,knight,light-cavalry,paladin,scout-cavalry,villager,archer-line,cavalry-archer-line,skirmisher-line,eagle-warrior-line,militiaman-line,spearman-line,berserk-line,cataphract-line,chu-ko-nu-line,conquistador-line,huskarl-line,jaguar-warrior-line,janissary-line,longbowman-line,mameluke-line,mangudai-line,plumed-archer-line,samurai-line,tarkan-line,teutonic-knight-line,throwing-axeman-line,war-elephant-line,war-wagon-line,woad-raider-line,cannon-galleon-line,demolition-ship-line,fire-ship-line,galley-line,longboat-line,turtle-ship-line,battering-ram-line,mangonel-line,scorpion-line,camel-line,knight-line,scout-cavalry-line
+		</parameter>
+		<parameter type="victory-condidition">
+			standard,conquest,time-limit,score,custom
+		</parameter>
+		<parameter type="wall">
+			fortified-wall,palisade-wall,stone-wall,stone-wall-line
+		</parameter>
+	</parameters>
+</definitions>

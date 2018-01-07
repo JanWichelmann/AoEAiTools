@@ -2,27 +2,26 @@
 using System.Windows.Media;
 using Microsoft.VisualStudio.Text.Classification;
 using Microsoft.VisualStudio.Utilities;
-
 namespace AoEAiTools.EditorExtensions.Classification
 {
-	/// <summary>
+    /* Commented out as long as predefined types are used in AiClassifierTypes.
+    /// <summary>
 	/// Contains the various classification formats.
 	/// </summary>
 	internal class AiClassifierFormats
 	{
-
-		[Export(typeof(EditorFormatDefinition))]
+        [Export(typeof(EditorFormatDefinition))]
 		[ClassificationType(ClassificationTypeNames = AiClassifierTypes.Comment)]
 		[Name("AiCommentFormatDefinition")]
 		[UserVisible(true)]
 		[Order(Before = Priority.Default)]
 		internal sealed class AiCommentClassificationFormat : ClassificationFormatDefinition
-		{
-			public AiCommentClassificationFormat()
+        {       
+            public AiCommentClassificationFormat()
 			{
 				DisplayName = "AI comment";
-				ForegroundColor = Colors.DarkGreen;
-			}
+                ForegroundColor = Colors.DarkGreen;
+            }
 		}
 
 		[Export(typeof(EditorFormatDefinition))]
@@ -123,17 +122,45 @@ namespace AoEAiTools.EditorExtensions.Classification
         }
 
         [Export(typeof(EditorFormatDefinition))]
-        [ClassificationType(ClassificationTypeNames = AiClassifierTypes.Command)]
-        [Name("AiCommandFormatDefinition")]
+        [ClassificationType(ClassificationTypeNames = AiClassifierTypes.RuleBooleanFactName)]
+        [Name("AiRuleBooleanFactNameFormatDefinition")]
         [UserVisible(true)]
         [Order(Before = Priority.Default)]
-        internal sealed class AiCommandClassificationFormat : ClassificationFormatDefinition
+        internal sealed class AiRuleBooleanFactNameClassificationFormat : ClassificationFormatDefinition
         {
-            public AiCommandClassificationFormat()
+            public AiRuleBooleanFactNameClassificationFormat()
             {
-                DisplayName = "AI command";
+                DisplayName = "AI rule boolean fact name";
+                ForegroundColor = Colors.Blue;
+            }
+        }
+
+        [Export(typeof(EditorFormatDefinition))]
+        [ClassificationType(ClassificationTypeNames = AiClassifierTypes.RuleFactName)]
+        [Name("AiRuleFactNameFormatDefinition")]
+        [UserVisible(true)]
+        [Order(Before = Priority.Default)]
+        internal sealed class AiRuleFactNameClassificationFormat : ClassificationFormatDefinition
+        {
+            public AiRuleFactNameClassificationFormat()
+            {
+                DisplayName = "AI rule fact name";
                 ForegroundColor = Colors.Violet;
             }
         }
-    }
+
+        [Export(typeof(EditorFormatDefinition))]
+        [ClassificationType(ClassificationTypeNames = AiClassifierTypes.RuleActionName)]
+        [Name("AiRuleActionNameFormatDefinition")]
+        [UserVisible(true)]
+        [Order(Before = Priority.Default)]
+        internal sealed class AiRuleActionNameClassificationFormat : ClassificationFormatDefinition
+        {
+            public AiRuleActionNameClassificationFormat()
+            {
+                DisplayName = "AI rule action name";
+                ForegroundColor = Colors.Violet;
+            }
+        }
+    }/**/
 }

@@ -9,7 +9,6 @@ namespace AoEAiTools.EditorExtensions.Classification
 	/// </summary>
 	internal static class AiClassifierClassificationDefinition
 	{
-		// This disables "The field is never used" compiler's warning. Justification: the field is used by MEF.
 #pragma warning disable 169
 
 		[Export(typeof(ClassificationTypeDefinition))]
@@ -45,8 +44,12 @@ namespace AoEAiTools.EditorExtensions.Classification
 		private static ClassificationTypeDefinition AiIdentifierClassificationType;
 
         [Export(typeof(ClassificationTypeDefinition))]
-        [Name(AiClassifierTypes.Command)]
-        private static ClassificationTypeDefinition AiCommandClassificationType;
+        [Name(AiClassifierTypes.RuleFactName)]
+        private static ClassificationTypeDefinition AiRuleFactNameClassificationType;
+
+        [Export(typeof(ClassificationTypeDefinition))]
+        [Name(AiClassifierTypes.RuleActionName)]
+        private static ClassificationTypeDefinition AiRuleActionNameClassificationType;
 
 #pragma warning restore 169
     }

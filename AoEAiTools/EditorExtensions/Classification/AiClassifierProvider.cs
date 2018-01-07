@@ -33,7 +33,7 @@ namespace AoEAiTools.EditorExtensions.Classification
 		/// <returns>A classifier for the text buffer, or null if the provider cannot do so in its current state.</returns>
 		public IClassifier GetClassifier(ITextBuffer buffer)
 		{
-			return buffer.Properties.GetOrCreateSingletonProperty<AiClassifier>(creator: () => new AiClassifier(buffer, classificationRegistry));
+			return buffer.Properties.GetOrCreateSingletonProperty(() => new AiClassifier(buffer, classificationRegistry));
 		}
 
 		#endregion

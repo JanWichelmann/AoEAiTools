@@ -61,101 +61,29 @@ namespace AoEAiTools.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die true
-        ///false
-        ///event-detected
-        ///taunt-detected
-        ///timer-triggered
-        ///cheats-enabled
-        ///death-match-game
-        ///difficulty
-        ///game-time
-        ///map-size
-        ///map-type
-        ///player-computer
-        ///player-human
-        ///player-in-game
-        ///player-resigned
-        ///player-valid
-        ///population-cap
-        ///regicide-game
-        ///starting-age
-        ///starting-resources
-        ///victory-condition
-        ///can-buy-commodity
-        ///can-sell-commodity
-        ///commodity-buying-price
-        ///commodity-selling-price
-        ///players-tribute
-        ///players-tribute-memory
-        ///can-build-gate-with-escrow
-        ///can-build-wall-with-escrow
-        ///can-build-with-escrow
-        ///can [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;definitions&gt;
+        ///	&lt;facts&gt;
+        ///		&lt;fact name=&quot;true&quot; /&gt;
+        ///		&lt;fact name=&quot;false&quot; /&gt;
+        ///		&lt;fact name=&quot;attack-soldier-count&quot;&gt;
+        ///			&lt;parameter type=&quot;rel-op&quot; /&gt;
+        ///			&lt;parameter type=&quot;number&quot; /&gt;
+        ///		&lt;/fact&gt;
+        ///		&lt;fact name=&quot;attack-warboat-count&quot;&gt;
+        ///			&lt;parameter type=&quot;rel-op&quot; /&gt;
+        ///			&lt;parameter type=&quot;number&quot; /&gt;
+        ///		&lt;/fact&gt;
+        ///		&lt;fact name=&quot;building-available&quot;&gt;
+        ///			&lt;parameter type=&quot;building&quot; /&gt;
+        ///		&lt;/fact&gt;
+        ///		&lt;fact name=&quot;building-count&quot;&gt;
+        ///			&lt;parameter type=&quot;rel-op&quot; /&gt;
+        ///			&lt;parameter type=&quot;number [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
-        internal static string Commands {
+        internal static string RuleDefinitions {
             get {
-                return ResourceManager.GetString("Commands", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die dark-age
-        ///feudal-age
-        ///castle-age
-        ///imperial-age
-        ///post-imperial-age
-        ///
-        ///archery-range
-        ///barracks
-        ///blacksmith
-        ///bombard-tower
-        ///castle
-        ///dock
-        ///farm
-        ///fish-trap
-        ///guard-tower
-        ///house
-        ///keep
-        ///lumber-camp
-        ///market
-        ///mill
-        ///mining-camp
-        ///monastery
-        ///outpost
-        ///siege-workshop
-        ///stable
-        ///town-center
-        ///university
-        ///watch-tower
-        ///wonder
-        ///
-        ///briton
-        ///byzantine
-        ///celtic
-        ///chinese
-        ///frankish
-        ///gothic
-        ///japanese
-        ///mongol
-        ///persian
-        ///saracen
-        ///teutonic
-        ///turkish
-        ///viking
-        ///
-        ///easiest
-        ///easy
-        ///moderate
-        ///hard
-        ///hardest
-        ///
-        ///ability-to-dodge-missiles
-        ///ability-to-mai [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
-        /// </summary>
-        internal static string Identifiers {
-            get {
-                return ResourceManager.GetString("Identifiers", resourceCulture);
+                return ResourceManager.GetString("RuleDefinitions", resourceCulture);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AoEAiTools.LanguageParsing;
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Classification;
 
@@ -11,18 +12,22 @@ namespace AoEAiTools.EditorExtensions.Classification
 	/// </summary>
 	internal class AiClassifier : IClassifier
 	{
-		/// <summary>
-		/// An event that occurs when the classification of a span of text has changed.
-		/// </summary>
-		/// <remarks>
-		/// This event gets raised if a non-text change would affect the classification in some way,
-		/// for example typing /* would cause the classification to change in C# without directly
-		/// affecting the span.
-		/// </remarks>
-		public event EventHandler<ClassificationChangedEventArgs> ClassificationChanged;
+#pragma warning disable 67
+        /// <summary>
+        /// Unused here, since the AI language does not support multi-line comments.
+        /// </summary>
+        public event EventHandler<ClassificationChangedEventArgs> ClassificationChanged;
+#pragma warning restore 67
 
-		private IClassificationTypeRegistryService _classificationTypeRegistry;
-		private ITextBuffer _textBuffer;
+        /// <summary>
+        /// The registry of classification types, containing the types and their respective formatting settings.
+        /// </summary>
+        private IClassificationTypeRegistryService _classificationTypeRegistry;
+
+        /// <summary>
+        /// An AI parser object for tokenizing text.
+        /// </summary>
+        private AiParser _aiParser;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AiClassifier"/> class.
@@ -30,24 +35,74 @@ namespace AoEAiTools.EditorExtensions.Classification
 		/// <param name="registry">Classification registry.</param>
 		internal AiClassifier(ITextBuffer textBuffer, IClassificationTypeRegistryService classificationTypeRegistry)
 		{
-			_textBuffer = textBuffer;
+            // Save needed parameters
 			_classificationTypeRegistry = classificationTypeRegistry;
+
+            // Create parser object
+            _aiParser = new AiParser();
 		}
 
 		/// <summary>
 		/// Gets all the <see cref="ClassificationSpan"/> objects that intersect with the given range of text.
 		/// </summary>
-		/// <remarks>
-		/// This method scans the given SnapshotSpan for potential matches for this classification.
-		/// </remarks>
 		/// <param name="span">The span currently being classified.</param>
 		/// <returns>A list of ClassificationSpans that represent spans identified to be of this classification.</returns>
 		public IList<ClassificationSpan> GetClassificationSpans(SnapshotSpan span)
 		{
-			// Initialize result list
+            // Initialize result list
 			List<ClassificationSpan> spans = new List<ClassificationSpan>();
 
-			// Get first and last line, use these to get the whole text in between (including line breaks)
+            // Get tokens beginning with the start of the first line of the given span (to avoid starting within a word)
+            foreach(AiToken token in _aiParser.GetTokens(span.Start.GetContainingLine().Start))
+            {
+                // Finished?
+                if(token.StartPoint >= span.End)
+                    break;
+
+                // Classify depending on token type
+                string classifierType = AiClassifierTypes.Default;
+                switch(token.Type)
+                {
+                    case AiTokenTypes.Comment:
+                        classifierType = AiClassifierTypes.Comment;
+                        break;
+                    case AiTokenTypes.Defrule:
+                    case AiTokenTypes.BooleanFactName:
+                    case AiTokenTypes.RuleArrow:
+                    case AiTokenTypes.Defconst:
+                    case AiTokenTypes.Load:
+                    case AiTokenTypes.LoadRandom:
+                        classifierType = AiClassifierTypes.Keyword;
+                        break;
+                    case AiTokenTypes.OpeningBrace:
+                    case AiTokenTypes.ClosingBrace:
+                        classifierType = AiClassifierTypes.Delimiter;
+                        break;
+                    case AiTokenTypes.String:
+                        classifierType = AiClassifierTypes.String;
+                        break;
+                    case AiTokenTypes.Number:
+                        classifierType = AiClassifierTypes.Number;
+                        break;
+                    case AiTokenTypes.FactName:
+                        classifierType = AiClassifierTypes.RuleFactName;
+                        break;
+                    case AiTokenTypes.ActionName:
+                        classifierType = AiClassifierTypes.RuleActionName;
+                        break;
+                    case AiTokenTypes.Word:
+                        if(Constants.AiOperators.Contains(token.Content))
+                            classifierType = AiClassifierTypes.Operator;
+                        else if(Constants.AiIdentifiers.Contains(token.Content))
+                            classifierType = AiClassifierTypes.Identifier;
+                        else
+                            classifierType = AiClassifierTypes.Default;
+                        break;
+                }
+                spans.Add(new ClassificationSpan(new SnapshotSpan(token.StartPoint, token.Length), _classificationTypeRegistry.GetClassificationType(classifierType)));
+            }
+
+			/*// Get first and last line, use these to get the whole text in between (including line breaks)
 			var startLine = span.Start.GetContainingLine();
 			var endLine = (span.End - 1).GetContainingLine();
 			var text = span.Snapshot.GetText(new SnapshotSpan(startLine.Start, endLine.End));
@@ -182,7 +237,7 @@ namespace AoEAiTools.EditorExtensions.Classification
             // Classify remaining whitespace
 			int remainingCharCountTillEnd = endLine.End.Position - (startLine.Start.Position + lastClassificationEndIndex);
 			if(remainingCharCountTillEnd > 0)
-				spans.Add(CreateClassificationSpan(span, lastClassificationEndIndex, remainingCharCountTillEnd, AiClassifierTypes.Default));
+				spans.Add(CreateClassificationSpan(span, lastClassificationEndIndex, remainingCharCountTillEnd, AiClassifierTypes.Default));*/
 
             // Return classication list
 			return spans;
